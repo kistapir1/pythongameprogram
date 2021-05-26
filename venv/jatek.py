@@ -24,12 +24,22 @@ enemyX_change = 0.1
 enemyY_change= 50
 num_of_enemies = 6
 
+bulletImg = pygame.image.load('laser.png')
+bulletX = playerX
+bulletY = playerY
+bulletY_change = 0
+
+
 
 def player(X,Y):
     screen.blit(playerIMG, (X,Y))
 
 def enemy(x, y,):
     screen.blit(enemyImg, (x, y))
+
+def bullet(x, y):
+    screen.blit(bulletImg, (x, y))
+
 
 running = True
 while running:
@@ -47,6 +57,10 @@ while running:
             if event.key == pygame.K_RIGHT:
                 print("right pressed")
                 playerX_change = 0.2
+            if event.key == pygame.K_UP:
+                print("up pressed")
+                print(bullet(bulletX, bulletY))
+                bulletY_change = 10
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
                 playerX_change = 0
@@ -70,8 +84,5 @@ while running:
     player(playerX,playerY)
     enemy(enemyX, enemyY)
     pygame.display.update()
-
-
-
 
 pygame.quit()
