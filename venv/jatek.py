@@ -4,6 +4,7 @@ import random
 
 pygame.init()
 
+
 screen = pygame.display.set_mode([800, 650])
 
 background = pygame.image.load('urhatter.jpg')
@@ -43,6 +44,7 @@ def bullet(x, y):
     screen.blit(bulletImg, (x, y))
 
 
+
 running = True
 while running:
 
@@ -60,9 +62,9 @@ while running:
                 print("right pressed")
                 playerX_change = 0.2
             if event.key == pygame.K_UP:
-                print("up pressed")
-                print(bullet(bulletX, bulletY))
-                bulletY_change = 10
+                  print("up pressed")
+                  print(bullet(bulletX, bulletY))
+                  bulletY_change = 10
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
                 playerX_change = 0
