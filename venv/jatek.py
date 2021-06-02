@@ -26,8 +26,8 @@ enemyY_change= 50
 num_of_enemies = 6
 
 
-bulletImg=pygame.image.load('laser.png')
-bulletImg=pygame.transform.scale(bulletImg, (9, 25))
+bulletImg = pygame.image.load('laser.png')
+bulletImg = pygame.transform.scale(bulletImg, (9, 25))
 bulletX = playerX
 bulletY = playerY
 bulletY_change = 0
@@ -86,7 +86,7 @@ while running:
         enemyX_change = -0.1
         enemyY += enemyY_change
 
-    bulletY += bulletY_change
+    bulletY -= bulletY_change
     bulletX += playerX_change
 
     if bulletX <= 0:
@@ -97,6 +97,7 @@ while running:
     if bulletY <= 0:
         bulletY_change = 10
     #elif bulletY >= 800:
+
 
 
     player(playerX,playerY)
