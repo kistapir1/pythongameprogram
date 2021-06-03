@@ -82,7 +82,7 @@ while running:
 
 
 
-
+    enemyX += enemyX_change
 
     if enemyX <= 0:
         enemyX_change = 0.1
@@ -94,6 +94,7 @@ while running:
     if bulletY <= 0:
         bulletY = 480
         bullet_state = "ready"
+
 
     if bullet_state is "fire":
         fire_bullet(bulletX, bulletY)
