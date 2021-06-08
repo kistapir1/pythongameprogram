@@ -21,7 +21,7 @@ playerX_change = 0
 enemyImg = pygame.image.load('ellenfel.png')
 enemyX = random.randint(0,800)
 enemyY = random.randint(50, 150)
-enemyX_change = 0.2
+enemyX_change = 0.6
 enemyY_change = 50
 
 
@@ -51,6 +51,7 @@ def game_over_text():
     over_text = over_font.render("GAME OVER", True, (139, 0, 139))
     screen.blit(over_text, (200, 250))
 
+
 def player(x,y):
     screen.blit(playerIMG, (x, y))
 
@@ -73,7 +74,7 @@ def isCollision(enemyX, enemyY, bulletX, bulletY):
 running = True
 while running:
 
-#screen.fill((0, 0, 100))
+
     screen.blit(background, (0,0))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -82,10 +83,10 @@ while running:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 print("left pressed")
-                playerX_change = -0.5
+                playerX_change = -0.8
             if event.key == pygame.K_RIGHT:
                 print("right pressed")
-                playerX_change = 0.5
+                playerX_change = 0.8
             if event.key == pygame.K_UP:
                 if bullet_state == "ready":
                     bulletX = playerX
