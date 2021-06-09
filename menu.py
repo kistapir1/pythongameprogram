@@ -1,13 +1,14 @@
 import pygame
 import pygame_menu
 
-import jatek
+#import jatek
 
 pygame.init()
 surface = pygame.display.set_mode((800, 600))
 
 def start_the_game():
 
+    pass
 
 
 menu = pygame_menu.Menu(width = 600, height = 450, title = 'Welcome',
